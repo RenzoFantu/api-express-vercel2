@@ -3,7 +3,7 @@ const path = require ('path')
 
 const readData = () => {
     try {
-        const filePath = path.join(_dirname, 'db.json')
+        const filePath = path.join(__dirname, 'db.json')
         const data = fs.readFileSync(filePath);
         return JSON.parse(data);
     } catch (error) {
@@ -13,7 +13,7 @@ const readData = () => {
 
 const writeData = (data) => {
     try {
-        const filePath = path.join(_dirname, 'db.json')
+        const filePath = path.join(__dirname, 'db.json')
         fs.writeFileSync(filePath, JSON.stringify(data))
     } catch (error) {
         console.log('error: ', error);
